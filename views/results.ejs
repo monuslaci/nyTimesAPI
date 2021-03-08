@@ -1,0 +1,46 @@
+<%- include("partials/header") -%>
+
+
+
+
+
+    <div class="container-fluid main">
+      <div class=card>
+    <h1 class="page">Search results</h1>
+        <% for( let i = 0; i < articles.length; i++ ) { %>
+    
+    
+          <% if( articles[i].picture) { %>
+            <p>
+      
+          <a href="<%= articles[i].web_url %>" target="_blank">
+            <img src="https://www.nytimes.com/<%= articles[i].picture %>">
+          </a>
+        </p>
+          <% } %>
+            <p class="pCont">      <%= articles[i].abstract %>  </p>
+           <p class="leadP">      <%= articles[i].leadP %>  </p>
+
+           <a href="<%= articles[i].web_url %>" target="_blank">
+            <p>  CONTINUE TO SITE >>>     </p>
+          </a>
+        <% } %>
+        <p class="page">    --<%= pageNr+1 %>--  </p>     
+      </div>
+     
+
+      <form action="/results" method="post">
+        <input type="hidden"  name="previous" value="previous">
+      <button type="submit"  class="previous btn btn-primary button">Previous</button>
+    </form>
+
+    <form action="/results" method="post">
+      <input type="hidden"  name="next" value="next">
+      <button type="submit" class="next btn btn-primary button">Next</button>
+  </form>
+
+    
+
+    </div>
+
+<%- include("partials/footer") %>

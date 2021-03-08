@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+
+
+
+
+
+    <div class="text-center">
+
+  <form action="/" class="form-signin" method="post">
+    <img class="mb-4" src="images\nytimes.png" alt="" >
+    <h1 class="h3 mb-3 fw-normal"></h1>
+
+    <input type="text" name="keyword" class="form-control top" placeholder="Article keyword" autocomplete="off" required autofocus>
+    <input type="text" name="yearFrom" class="form-control middle" placeholder="Date from" autocomplete="off" data-date-format="yyyy-mm-dd"  id="datepickerFrom">
+    <input type="text" name="yearTo" class="form-control middle" placeholder="Date to" autocomplete="off" data-date-format="yyyy-mm-dd" id="datepickerTo">
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Search!</button>
+
+  </form>
+
+</div>
+
+
